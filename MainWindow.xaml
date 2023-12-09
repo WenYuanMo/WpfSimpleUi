@@ -1,0 +1,124 @@
+﻿<Window x:Class="SimpleWpfStyleDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleWpfStyleDemo"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+        Style="{StaticResource WindowStyle}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btn_window_max"
+                    Content="最大化"
+                    Style="{DynamicResource WindowButtonStyle}"
+                    Click="btn_window_max_Click"></Button>
+
+            <Button Name="btn_widow_min"
+                    Content="最小化"
+                    Grid.Column="1"
+                    Style="{DynamicResource WindowButtonStyle}"
+                    Click="btn_widow_min_Click"></Button>
+
+            <Button Name="btn_window_exit"
+                    Grid.Column="2"                    
+                    Content="关闭"
+                    Style="{DynamicResource WindowButtonStyle}"
+                    Click="btn_window_exit_Click"></Button>
+
+            <Border x:Name="border_window_move"
+                    Grid.Column="3"
+                    Background="#666666"
+                   MouseLeftButtonDown="border_window_move_MouseLeftButtonDown">
+                <Label Content="Wfp Simple Style Demo"
+                       Foreground="White"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"></Label>
+            </Border>
+        </Grid>
+
+
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <Border BorderBrush="Black"
+                    BorderThickness="2"
+                    CornerRadius="5">
+                    <StackPanel Margin="5">
+                        <Button Content="按钮样式"
+                    Margin="5"></Button>
+
+                        <CheckBox Content="Checkbox样式"
+                      Margin="5"></CheckBox>
+
+                        <RadioButton Content="Radiobutton样式"
+                         Margin="5"></RadioButton>
+
+                        <TextBox Text="文本样式"
+                     Height="60"
+                     Margin="5"></TextBox>
+
+                        <ComboBox Margin="5"
+                      Height="30"
+                      SelectedIndex="0">
+                            <ComboBoxItem>1</ComboBoxItem>
+                            <ComboBoxItem>2</ComboBoxItem>
+                            <ComboBoxItem>3</ComboBoxItem>
+                            <ComboBoxItem>4</ComboBoxItem>
+                        </ComboBox>
+
+                    </StackPanel>
+                </Border>
+            </ScrollViewer>
+
+            <Border Grid.Column="1"              
+                Margin="5"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="5">
+                <Grid >
+                    <TabControl>
+                        <TabItem Header="tabitem样式">
+                            <Border Margin="5"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="5"></Border>
+                        </TabItem>
+
+                        <TabItem Header="tabitem样式">
+                            <Border Margin="5"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="5"></Border>
+                        </TabItem>
+
+
+
+                    </TabControl>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
